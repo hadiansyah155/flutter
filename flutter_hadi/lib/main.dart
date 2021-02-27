@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-import './email.dart' as email;
-import './music.dart' as music;
-import './shopping.dart' as shopping;
-import './telepon.dart' as telepon;
+import './datakasus.dart' as datakasus;
+import './indonesia.dart' as indonesia;
+import './global.dart' as global;
+import './tentang.dart' as tentang;
 
 void main() {
   runApp(new MaterialApp(
-    title: "Tampilan Tab Bar",
+    title: "Tracking-covid-19",
     home: new Home(),
   ));
 }
@@ -42,7 +42,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
         //warna background
         backgroundColor: Colors.blue,
         //judul
-        title: new Text("Hadiansyah"),
+        title: new Text("Tracking-covid19"),
         //bottom
         bottom: new TabBar(
           controller: controller,
@@ -56,10 +56,12 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
               text: "Indonesia",
             ),
             new Tab(
-              icon: new Icon(Icons.shopping_cart),
+              icon: new Icon(Icons.table_chart),
+              text: "Global",
             ),
             new Tab(
-              icon: new Icon(Icons.add_a_photo_sharp),
+              icon: new Icon(Icons.add_alert_sharp),
+              text: "Tentang",
             ),
           ],
         ),
@@ -72,10 +74,10 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
         controller: controller,
         children: <Widget>[
           //kemudian panggil halaman sesuai tab yang sudah dibuat
-          new email.Email(),
-          new music.Music(),
-          new shopping.Shopping(),
-          new telepon.Telepon()
+          new datakasus.DataKasus(),
+          new indonesia.TableIndonesia(),
+          new global.TableGlobal(),
+          new tentang.Tentang()
         ],
       ),
     );
